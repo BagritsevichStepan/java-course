@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef37e217-bdcf-4d4b-9142-b55e30d9c5f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/markdownToHtml.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Asserts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/BaseChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Either.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/ExtendedRandom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Log.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/MainChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/ModelessSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Named.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Runner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/TestCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Triple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/VariantTester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/markup/MarkupListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/markup/MarkupTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/markup/MarkupTester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/markup/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/markup/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/md2html/Md2HtmlTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/md2html/Md2HtmlTester.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HGrpEjG0vNB4elXqWhGLXvF7Xh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/stepan_bagritsevich/Documents/GitHub/java-course/MarkdownToHtml/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="MarkdownToHtmlExample" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="MarkdownToHtmlExample" />
+      <module name="MarkdownToHtml" />
+      <option name="PROGRAM_PARAMETERS" value="input.txt output.txt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef37e217-bdcf-4d4b-9142-b55e30d9c5f2" name="Changes" comment="" />
+      <created>1667922447315</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667922447315</updated>
+      <workItem from="1667922452899" duration="224000" />
+      <workItem from="1667923039419" duration="491000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -2,7 +2,7 @@ package markup;
 
 import java.util.Map;
 
-public class Text implements Paragraphable {
+public class Text implements Content {
     private final String text;
 
     private final static Map<Character, String> HTML_ENTITY = Map.of(
