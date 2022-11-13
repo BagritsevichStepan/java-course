@@ -7,7 +7,6 @@ import java.util.*;
 
 public class MarkdownParser extends BaseParser {
     private int[] openTagsCount;
-
     private static final List<String> OPEN_MARKDOWN_TAG = new ArrayList<>(
             List.of("**", "__", "--", "<<", "}}", "*", "_", "`")
     );

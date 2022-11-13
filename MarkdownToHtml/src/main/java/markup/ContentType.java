@@ -56,6 +56,18 @@ public enum ContentType {
         return getTag(CONTENT_TYPE_TO_CLOSE_MARKDOWN_TAG, item, " hasn't close markdown tag");
     }
 
+    private static String getTag(
+            EnumMap<ContentType, String> itemToString,
+            ContentType item,
+            String errorMessage) {
+        String tag = itemToString.get(item);
+        if (tag != null) {
+            return tag;
+        }
+
+        throw new UnsupportedOperationException(item + errorMessage);
+    }
+
     public static String getOpenHtmlTag(ContentType item) {
         String htmlTag = getHtmlTag(item);
         if (!htmlTag.equals("")) {
@@ -74,17 +86,5 @@ public enum ContentType {
 
     private static String getHtmlTag(ContentType item) {
         return getTag(CONTENT_TYPE_TO_HTML_TAG, item, " hasn't html tag");
-    }
-
-    private static String getTag(
-            EnumMap<ContentType, String> itemToString,
-            ContentType item,
-            String errorMessage) {
-        String tag = itemToString.get(item);
-        if (tag != null) {
-            return tag;
-        }
-
-        throw new UnsupportedOperationException(item + errorMessage);
     }
 }
