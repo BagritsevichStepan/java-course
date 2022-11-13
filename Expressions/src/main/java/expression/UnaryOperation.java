@@ -11,23 +11,40 @@ public abstract class UnaryOperation extends Operation {
     }
 
     @Override
-    public int evaluate(int x) {
-        return makeIntOperation(expression.evaluate(x));
+    public int evaluate(int x, boolean checkedMode) {
+        int expressionValue = expression.evaluate(x, checkedMode);
+        return checkedMode
+                ? makeCheckedIntOperation(expressionValue)
+                : makeIntOperation(expressionValue);
     }
 
     @Override
-    public int evaluate(int x, int y, int z) {
-        return makeIntOperation(expression.evaluate(x, y, z));
+    public BigDecimal evaluate(BigDecimal x, boolean checkedMode) {
+        BigDecimal expressionValue = expression.evaluate(x, checkedMode);
+        return checkedMode
+                ? makeCheckedDecimalOperation(expressionValue)
+                : makeDecimalOperation(expressionValue);
     }
 
     @Override
-    public BigDecimal evaluate(BigDecimal x) {
-        return makeDecimalOperation(expression.evaluate(x));
+    public int evaluate(int x, int y, int z, boolean checkedMode) {
+        int expressionValue = expression.evaluate(x, y, z, checkedMode);
+        return checkedMode
+                ? makeCheckedIntOperation(expressionValue)
+                : makeIntOperation(expressionValue);
     }
 
     protected abstract int makeIntOperation(int a);
 
+    protected int makeCheckedIntOperation(int a) {
+        return makeIntOperation(a);
+    }
+
     protected abstract BigDecimal makeDecimalOperation(BigDecimal a);
+
+    protected BigDecimal makeCheckedDecimalOperation(BigDecimal a) {
+        return makeDecimalOperation(a);
+    }
 
     protected String getErrorMessage(int a) {
         return getExpressionSign() + "(" + a + ")";

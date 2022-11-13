@@ -11,6 +11,11 @@ public class CheckedSubtract extends BinaryOperation {
 
     @Override
     protected int makeIntOperation(int a, int b) {
+        return a - b;
+    }
+
+    @Override
+    protected int makeCheckedIntOperation(int a, int b) {
         if ((b > 0 && a < Integer.MIN_VALUE + b) || (b < 0 && a > Integer.MAX_VALUE + b)) {
             throw new SubtractOverflowException(getErrorMessage(a, b));
         }

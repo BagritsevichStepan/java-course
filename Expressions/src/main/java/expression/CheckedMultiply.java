@@ -11,6 +11,11 @@ public class CheckedMultiply extends BinaryOperation {
 
     @Override
     protected int makeIntOperation(int a, int b) {
+        return a * b;
+    }
+
+    @Override
+    protected int makeCheckedIntOperation(int a, int b) {
         if (checkMultiplyOverflow(a, b)) {
             throw new MultiplyOverflowException(getErrorMessage(a, b));
         }
@@ -18,8 +23,6 @@ public class CheckedMultiply extends BinaryOperation {
     }
 
     public static boolean checkMultiplyOverflow(int a, int b) {
-        // ADD: a == Integer.MIN_VALUE && b == -1
-        // ADD: b == Integer.MIN_VALUE && a == -1
         return a != 0 && b != 0 && (a * b) / b != a;
     }
 
@@ -27,6 +30,7 @@ public class CheckedMultiply extends BinaryOperation {
     protected BigDecimal makeDecimalOperation(BigDecimal a, BigDecimal b) {
         return a.multiply(b);
     }
+
     @Override
     public boolean orderIsImportant() {
         return false;

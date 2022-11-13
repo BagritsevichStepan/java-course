@@ -12,6 +12,11 @@ public class CheckedPow extends BinaryOperation {
 
     @Override
     protected int makeIntOperation(int a, int b) {
+        return (int) Math.pow(a, b);
+    }
+
+    @Override
+    protected int makeCheckedIntOperation(int a, int b) {
         if ((a == 0 && b == 0) || b < 0) {
             throw new PowInvalidArgumentsException(getErrorMessage(a, b));
         }
@@ -42,6 +47,11 @@ public class CheckedPow extends BinaryOperation {
 
     @Override
     protected BigDecimal makeDecimalOperation(BigDecimal a, BigDecimal b) {
+        return a.pow(b.intValue());
+    }
+
+    @Override
+    protected BigDecimal makeCheckedDecimalOperation(BigDecimal a, BigDecimal b) {
         if ((a.equals(BigDecimal.ZERO) && b.equals(BigDecimal.ZERO)) ||
                 b.compareTo(BigDecimal.ZERO) < 0 ||
                 b.compareTo(new BigDecimal(999999999)) > 0

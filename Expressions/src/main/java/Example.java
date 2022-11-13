@@ -11,22 +11,23 @@ public class Example {
         System.out.println("Expression with a minimum number of brackets: " + expression.toMiniString());
     }
 
-    private static void expressionExample(ExpressionPriority expression, Object x) {
+    private static void expressionExample(ExpressionPriority expression, Object x, boolean checkedMode) {
         outputExpression(expression);
         System.out.print("Expression result with x=" + x + ": ");
         if (x instanceof Integer) {
-            System.out.println(expression.evaluate((Integer) x));
+            System.out.println(expression.evaluate((Integer) x, checkedMode));
         }
         if (x instanceof BigDecimal) {
-            System.out.println(expression.evaluate((BigDecimal) x));
+            System.out.println(expression.evaluate((BigDecimal) x, checkedMode));
         }
     }
 
-    private static void expressionExample(ExpressionPriority expression, Object x, Object y, Object z) {
+    private static void expressionExample(ExpressionPriority expression, Object x,
+                                          Object y, Object z, boolean checkedMode) {
         outputExpression(expression);
         System.out.print("Expression result with x=" + x + ", y=" + y + ", z=" + z + ": ");
         if (x instanceof Integer) {
-            System.out.println(expression.evaluate((Integer) x, (Integer) y, (Integer) z));
+            System.out.println(expression.evaluate((Integer) x, (Integer) y, (Integer) z, checkedMode));
         }
     }
 
@@ -35,27 +36,44 @@ public class Example {
             throw new IllegalArgumentException("3 parameters are required");
         }
 
+        // Expression -x*l08+(4*-(6)) with int x
+        // CheckedMode == true
         try {
-            expressionExample(new ExpressionParser().parse("-x*l08+(4*-(6))"),
-                    Integer.valueOf(args[0]));
+            expressionExample(
+                    new ExpressionParser().parse("-x*l08+(4*-(6))"),
+                    Integer.valueOf(args[0]),
+                    true
+            );
         } catch (ParsingException e) {
             System.err.println("Parsing exception: " + e.getMessage());
         } catch (ExpressionException e) {
             System.err.println("Expression exception:" + e.getMessage());
         } catch (NumberFormatException ignored) {}
 
+        // Expression -(3.86)+(4.5*x) with BigDecimal x
+        // CheckedMode == false
         try {
-            expressionExample(new ExpressionParser().parse("-(3.86)+(4.5*x)"),
-                    new BigDecimal(args[0]));
+            expressionExample(
+                    new ExpressionParser().parse("-(3.86)+(4.5*x)"),
+                    new BigDecimal(args[0]),
+                    false
+            );
         } catch (ParsingException e) {
             System.err.println("Parsing exception: " + e.getMessage());
         } catch (ExpressionException e) {
             System.err.println("Expression exception:" + e.getMessage());
         }
 
+        // Expression (-3*(x))+y*z+t04 with int x, int y, int z
+        // CheckedMode == true
         try {
-            expressionExample(new ExpressionParser().parse("(-3*(x))+y*z+t04"),
-                    Integer.valueOf(args[0]), Integer.valueOf(args[1]), Integer.valueOf(args[2]));
+            expressionExample(
+                    new ExpressionParser().parse("(-3*(x))+y*z+t04"),
+                    Integer.valueOf(args[0]),
+                    Integer.valueOf(args[1]),
+                    Integer.valueOf(args[2]),
+                    true
+            );
         } catch (ParsingException e) {
             System.err.println("Parsing exception: " + e.getMessage());
         } catch (ExpressionException e) {

@@ -13,23 +13,43 @@ public abstract class BinaryOperation extends Operation {
     }
 
     @Override
-    public int evaluate(int x) {
-        return makeIntOperation(left.evaluate(x), right.evaluate(x));
+    public int evaluate(int x, boolean checkedMode) {
+        final int leftValue = left.evaluate(x, checkedMode);
+        final int rightValue = right.evaluate(x, checkedMode);
+        return checkedMode
+                ? makeCheckedIntOperation(leftValue, rightValue)
+                : makeIntOperation(leftValue, rightValue);
     }
 
     @Override
-    public int evaluate(int x, int y, int z) {
-        return makeIntOperation(left.evaluate(x, y, z), right.evaluate(x, y, z));
+    public BigDecimal evaluate(BigDecimal x, boolean checkedMode) {
+        final BigDecimal leftValue = left.evaluate(x, checkedMode);
+        final BigDecimal rightValue = right.evaluate(x, checkedMode);
+        return checkedMode
+                ? makeCheckedDecimalOperation(leftValue, rightValue)
+                : makeDecimalOperation(leftValue, rightValue);
     }
 
     @Override
-    public BigDecimal evaluate(BigDecimal x) {
-        return makeDecimalOperation(left.evaluate(x), right.evaluate(x));
+    public int evaluate(int x, int y, int z, boolean checkedMode) {
+        final int leftValue = left.evaluate(x, y, z, checkedMode);
+        final int rightValue = right.evaluate(x, y, z, checkedMode);
+        return checkedMode
+                ? makeCheckedIntOperation(leftValue, rightValue)
+                : makeIntOperation(leftValue, rightValue);
     }
 
     protected abstract int makeIntOperation(int a, int b);
 
+    protected int makeCheckedIntOperation(int a, int b) {
+        return makeIntOperation(a, b);
+    }
+
     protected abstract BigDecimal makeDecimalOperation(BigDecimal a, BigDecimal b);
+
+    protected BigDecimal makeCheckedDecimalOperation(BigDecimal a, BigDecimal b) {
+        return makeDecimalOperation(a, b);
+    }
 
     protected String getErrorMessage(int a, int b) {
         return a + " " + getExpressionSign() + " " + b;

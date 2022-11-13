@@ -23,18 +23,18 @@ public class Const implements ExpressionPriority {
     }
 
     @Override
-    public int evaluate(int x) {
+    public int evaluate(int x, boolean checkedMode) {
         return value.intValue();
     }
 
     @Override
-    public int evaluate(int x, int y, int z) {
-        return value.intValue();
-    }
-
-    @Override
-    public BigDecimal evaluate(BigDecimal x) {
+    public BigDecimal evaluate(BigDecimal x, boolean checkedMode) {
         return new BigDecimal(value.toString());
+    }
+
+    @Override
+    public int evaluate(int x, int y, int z, boolean checkedMode) {
+        return value.intValue();
     }
 
     @Override

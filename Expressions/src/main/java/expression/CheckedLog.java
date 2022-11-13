@@ -11,6 +11,11 @@ public class CheckedLog extends BinaryOperation {
 
     @Override
     protected int makeIntOperation(int a, int b) {
+        return (int) (Math.log(a) / Math.log(b));
+    }
+
+    @Override
+    protected int makeCheckedIntOperation(int a, int b) {
         if (!(a > 0 && b > 1)) {
             throw new LogInvalidArgumentsException(getErrorMessage(a, b));
         }
@@ -19,6 +24,11 @@ public class CheckedLog extends BinaryOperation {
             throw new LogInvalidArgumentsException(getErrorMessage(a, b));
         }
         return result;
+    }
+
+    @Override
+    protected BigDecimal makeDecimalOperation(BigDecimal a, BigDecimal b) {
+        throw new UnsupportedOperationException("BigDecimal operation - unsupported for log operation");
     }
 
     private static int calcLog(int a, int b) {
@@ -33,11 +43,6 @@ public class CheckedLog extends BinaryOperation {
     @Override
     protected String getErrorMessage(int a, int b) {
         return "Log_(" + b + ")(" + a + ")";
-    }
-
-    @Override
-    protected BigDecimal makeDecimalOperation(BigDecimal a, BigDecimal b) {
-        throw new UnsupportedOperationException("BigDecimal operation - unsupported for log operation");
     }
 
     @Override

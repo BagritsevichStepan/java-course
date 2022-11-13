@@ -16,12 +16,17 @@ public class Variable implements ExpressionPriority {
     }
 
     @Override
-    public int evaluate(int x) {
+    public int evaluate(int x, boolean checkedMode) {
         return x;
     }
 
     @Override
-    public int evaluate(int x, int y, int z) {
+    public BigDecimal evaluate(BigDecimal x, boolean checkedMode) {
+        return x;
+    }
+
+    @Override
+    public int evaluate(int x, int y, int z, boolean checkedMode) {
         switch (variable) {
             case "x": return x;
             case "y": return y;
@@ -29,11 +34,6 @@ public class Variable implements ExpressionPriority {
         }
 
         throw new NoSuchElementException("Variable " + variable + " not found");
-    }
-
-    @Override
-    public BigDecimal evaluate(BigDecimal x) {
-        return x;
     }
 
     @Override

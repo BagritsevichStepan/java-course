@@ -12,6 +12,11 @@ public class CheckedDivide extends BinaryOperation {
 
     @Override
     protected int makeIntOperation(int a, int b) {
+        return a / b;
+    }
+
+    @Override
+    protected int makeCheckedIntOperation(int a, int b) {
         if (b == 0) {
             throw new DivisionByZeroException(getErrorMessage(a, b));
         }
@@ -23,6 +28,11 @@ public class CheckedDivide extends BinaryOperation {
 
     @Override
     protected BigDecimal makeDecimalOperation(BigDecimal a, BigDecimal b) {
+        return a.divide(b);
+    }
+
+    @Override
+    protected BigDecimal makeCheckedDecimalOperation(BigDecimal a, BigDecimal b) {
         if (b.equals(BigDecimal.ZERO)) {
             throw new DivisionByZeroException(getErrorMessage(a, b));
         }

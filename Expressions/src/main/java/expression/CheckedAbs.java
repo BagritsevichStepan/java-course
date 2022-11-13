@@ -11,6 +11,11 @@ public class CheckedAbs extends UnaryOperation {
 
     @Override
     protected int makeIntOperation(int a) {
+        return Math.abs(a);
+    }
+
+    @Override
+    protected int makeCheckedIntOperation(int a) {
         if (a == Integer.MIN_VALUE) {
             throw new AbsOverflowException(getErrorMessage(a));
         }
