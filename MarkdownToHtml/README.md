@@ -1,11 +1,11 @@
 # Markdown parser
 ____
 The project implements text markup,
-elements of which can be converted to **markdown** or **html** code.
+elements of which can be converted to **markdown** or **html**.
 It can also **parse markdown** into text markup,
 which can then be converted into html code.
 
-## Task statement
+## Problem statement
 ____
 ### First part
 1. Develop a set of classes for *text markup*.
