@@ -1,0 +1,26 @@
+<h1>First level header</h1>
+<h2>Second level header</h2>
+<h3>Third ## level header</h3>
+<h4>Fourth level header
+## Still fourth ##</h4>
+<p>This paragraph of text,
+## contains two lines.</p>
+<p>    # It might look like a headline.
+But no, it's a paragraph starting with `#.</p>
+<p>#And it's not a headline.</p>
+<h6>Headlines can be multi-line.
+(and with skipping headings on previous levels).</h6>
+<p>We all like to <em>select</em> text in <em>different</em> ways.
+<strong>Highlighting</strong>, is used much less frequently,
+but <strong>why not</strong>?
+A little <s>drawing out</s> has never hurt anyone.
+The code is represented by the <code>code</code> element.</p>
+<p>Notice how the special
+HTML characters such as <code>&lt;</code>, <code>&gt;</code> and <code>&amp;</code>.</p>
+<p>Did you know that in Markdown, single * and _
+do not stand for selection?
+They can also be escaped
+with a backslash: *.</p>
+<p>Unnecessary empty lines should be ignored.</p>
+<p>Do you love <em>nested <strong>selections</strong></em>
+like <strong><s>I do</s></strong>?</p>

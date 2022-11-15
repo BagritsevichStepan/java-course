@@ -1,0 +1,40 @@
+# First level header
+
+## Second level header
+
+### Third ## level header
+
+#### Fourth level header
+## Still fourth ##
+
+This paragraph of text,
+## contains two lines.
+
+    # It might look like a headline.
+But no, it's a paragraph starting with `#.
+
+#And it's not a headline.
+
+###### Headlines can be multi-line.
+(and with skipping headings on previous levels).
+
+We all like to *select* text in _different_ ways.
+**Highlighting**, is used much less frequently,
+but __why not__?
+A little --drawing out-- has never hurt anyone.
+The code is represented by the `code` element.
+
+Notice how the special
+HTML characters such as `<`, `>` and `&`.
+
+Did you know that in Markdown, single * and _
+do not stand for selection?
+They can also be escaped
+with a backslash: \*.
+
+
+
+Unnecessary empty lines should be ignored.
+
+Do you love *nested __selections__*
+like __--I do--__?
