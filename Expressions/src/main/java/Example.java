@@ -44,6 +44,7 @@ public class Example {
                     Integer.valueOf(args[0]),
                     true
             );
+            System.out.println();
         } catch (ParsingException e) {
             System.err.println("Parsing exception: " + e.getMessage());
         } catch (ExpressionException e) {
@@ -58,6 +59,7 @@ public class Example {
                     new BigDecimal(args[0]),
                     false
             );
+            System.out.println();
         } catch (ParsingException e) {
             System.err.println("Parsing exception: " + e.getMessage());
         } catch (ExpressionException e) {

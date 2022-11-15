@@ -22,10 +22,10 @@ public class Example {
         System.out.println("TicTacToe game result: " + ticTacToeGame.play(true));
 
         // MNK game example
-        // n=4, m=3, k=2
+        // n=4, m=5, k=4
         // Sequential player vs Random player
         final Game mnkGame = new Game(
-                new MNKBoard(4, 3, 2),
+                new MNKBoard(4, 5, 4),
                 new SequentialPlayer(),
                 new RandomPlayer()
         );
