@@ -2,7 +2,7 @@ import games.*;
 
 public class Example {
     public static void main(String[] args) {
-        // HEX game example
+        // HEX game 4x4 example
         // Human player vs Random player
         final Game hexGame = new Game(
                 new HexBoard(4),
