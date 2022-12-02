@@ -15,7 +15,7 @@ public class Example {
         // This is MNK game with n=3, m=3 and k=3
         // Sequential player vs Human player
         final Game ticTacToeGame = new Game(
-                new MNKBoard(),
+                new TicTacToeBoard(),
                 new SequentialPlayer(),
                 new HumanPlayer()
         );
