@@ -68,13 +68,13 @@ new Multiply(new Const(2), new Variable("x"))
 ```
 must return `false`.
 
-6. Priorities of operations, starting from the highest:
+6. Priorities of the operations, starting from the highest:
    1. `Negate`, `Abs`, `NumberOfLeadingZeros`, `NumberOfTrailingZeros`
    2. `Pow`, `Log`
    3. `Multiply`, `Divide`
    4. `Add`, `Subtract`
    5. `RightShift`, `UnsignedRightShift`, `LeftShift` 
-7. evaluate(int)
+7. Interface `Expression` must contain the method `evaluate` to evaluate expression with one variable in type int
 8. evaluate(BigDecimal)
 9. evaluate(int, int, int)
 10. When performing the task, you should pay attention to:
