@@ -1,60 +1,89 @@
-# Markdown parser
-____
-The project implements text markup,
-elements of which can be converted to **markdown** or **html**.
-It can also **parse markdown** into text markup,
-which can then be converted into html code.
+# Expressions
+The project parses mathematical expressions and stores them as classes, is able to compare and display mathematical expressions in different variants, can evaluate expressions with several variables. 
 
 ## Problem statement
-____
 ### First part
-1. Develop a set of classes for *text markup*.
-2. The `Paragraph` class can contain any number of other markup elements and text elements.
-3. The `Text` class is a text element.
-4. Other elements of text markup:
-   + `Header` is a title or subtitle;
-   + `Emphasis` italicizes some text;
-   + `Strong` makes a text bold;
-   + `Strikeout` crosses out a text;
-   + `Ordered list` is an ordered list that contains list items;
-   + `Unordered list` is an unordered list that contains list items;
-   + `ListItem` is a list item that can contain a sequence of paragraphs and lists;
-   + `Code` denotes word or phrase as code;
-   + `Insert` defines a text that has been inserted;
-   + `Delete` marks deleted text.
-5. Markup elements can contain any number of other markup elements and text elements.
-6. Classes must implement the `toMarkdown(StringBuilder)` method, which must generate markdown according to the following rules:
-   + **_Text elements_** and **_paragraph_** are rendered as is;
-   + **_Header_** has a **'#'** symbol in front of it. The number of these symbols corresponds to the header level;
-   + **_Italic text_** is surrounded by **'*'** symbols;
-   + **_Bold text_** is surrounded by **'__'** symbols;
-   + **_Strikethrough text_** is surrounded by **'~'** symbols;
-   + **_Code_** is surrounded by **'`'** symbols;
-   + **_Inserted text_** is surrounded by **'<<'** _(open tag)_ and **'>>'** _(close tag)_ symbols;
-   + **_Deleted text_** is surrounded by **'}}'** _(open tag)_ and **'{{'** _(close tag)_ symbols;
-   + **_Ordered and unordered lists_** and also **_list items_** do not support the `toMarkdown(StringBuilder)` method.
-7. Classes must implement the `toHtml(StringBuilder)` method, which must generate html code according to the following rules:
-   + `Text` has no html tag;
-   + `Paragraph` has the tag `<p>`;
-   + `Header` is defined with the `<h(title level)>` tag;
-   + `Emphasis` is a text with the `<em>` tag;
-   + `Strong` has the tag `<strong>`;
-   + `Strikeout` is defined with the `<s>` tag;
-   + `Ordered list`, `Unordered list` and `ListItem` have the `<ol>`, `<ul>` and `<li>` tags respectively;
-   + `Code` is defined with the `<code>` tag;
-   + `Insert` has the tag `<ins>`;
-   + `Delete` is a text with the `<del>` tag.
+1. Implement following classes to evaluate expressions:
+   + `Const` implements a constant value
+   + `Variable` implements a variable $x$, $y$ or $z$
+   + `Add` implements addition operation. Operator sign: `+`
+   + `Subtract` implements subtraction operation. Operator sign: `-`
+   + `Multiply` implements multiplication operation. Operator sign: `*`
+   + `Divide` implements division operation. Operator sign: `/`
+   + `Pow` implements power operation, evaluates the value of the left expression raised to the power of the value of the right expression. Operator sign: `**`
+   + `Log` implements logarithmic operation, evaluates the logarithm (base is the value of the right expression) of the value of the left expression. Operator sign: `//`
+   + `RightShift` implements right shift operation. Operator sign: `>>`
+   + `UnsignedRightShift` implements unsigned right shift operation. Operator sign: `>>>`
+   + `LeftShift` implements left shift operation. Operator sign: `<<`
+   + `Negate` implements negation operation, changes the sign (multiplies by -1) of the expression value. Operator sign: `-`
+   + `Abs` implements operation with absolute value. Operator sign: `abs`
+   + `NumberOfLeadingZeros` evaluates the number of zero bits preceding the highest-order ("leftmost") one-bit in the two's complement binary representation of the expression value. Operator sign: `l0`
+   + `NumberOfTrailingZeros` evaluates the number of zero bits following the lowest-order ("rightmost") one-bit in the two's complement binary representation of the expression value. Operator sign: `t0`
+
+2. Classes must allow the following expressions:
+```
+new Subtract(
+    new Multiply(
+        new Const(2),
+        new Variable("x")
+    ),
+    new Const(3)
+).evaluate(5)
+```
+When such an expression is evaluated, the value passed to the method `evaluate` as a parameter is substituted for each variable. Thus, the result of the calculation of the above example should be number 7.
+   
+3. The method `toString` must display an expression in the full-brackets-form. For example
+```
+new Subtract(
+    new Multiply(
+        new Const(2),
+        new Variable("x")
+    ),
+    new Const(3)
+).toString()
+```
+must return $((2 * x) - 3)$.
+
+4. The method `toMiniString` (interface `ToMiniString`) must display an expression with the minimum number of brackets. For example
+```
+new Subtract(
+    new Multiply(
+        new Const(2),
+        new Variable("x")
+    ),
+    new Const(3)
+).toMiniString()
+```
+must return $2 * x - 3$. 
+
+5. Implement method `equals` that proves if two expressions are equal. For example
+```
+new Multiply(new Const(2), new Variable("x"))
+    .equals(new Multiply(new Const(2), new Variable("x")))
+```
+must return `true` and
+```
+new Multiply(new Const(2), new Variable("x"))
+    .equals(new Multiply(new Variable("x"), new Const(2)))
+```
+must return `false`.
+
+6. Priorities of operations, starting from the highest:
+   1. `Negate`, `Abs`, `NumberOfLeadingZeros`, `NumberOfTrailingZeros`
+   2. `Pow`, `Log`
+   3. `Multiply`, `Divide`
+   4. `Add`, `Subtract`
+   5. `RightShift`, `UnsignedRightShift`, `LeftShift` 
+7. evaluate(int)
+8. evaluate(BigDecimal)
+9. evaluate(int, int, int)
+10. When performing the task, you should pay attention to:
+      + Creating a common interface for the classes
+      + Creating an abstract base class for binary and unary operations
+
 
 ### Second part
-something
 
-## Usage
-____
-something
+### Third part
 
 ## Examples
-____
-### First part
-something
-### Second part
-something
