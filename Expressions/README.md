@@ -107,3 +107,10 @@ x * (x - 2)*x + 1
 4. Add something
 
 ## Examples
+Run `Example.java` with three arguments: value for $x$, value for $y$, value for $z$
+
+As an example, three expressions will be parsed, displayed and then evaluated:
+1. Expression `-x*l08+(4*-(6))` with `int x` (first argument). Checked mode is on.
+2. BigDecimal expression `-(3.86)+(4.5*x)` with `BigDecimal x` (first argument). Checked mode is off.
+3. Triple expression `(-3*(x))+y*z+t04` with `int x`, `int y` and `int z` (three arguments). Checked mode is on.
+
