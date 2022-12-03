@@ -101,15 +101,28 @@ x * (x - 2)*x + 1
 
 
 ### Third part
-1. Add something
-2. Add something
-3. Add something
-4. Add something
+1. Add the implementation of exceptions thrown during the parsing or evaluation of expressions
+2. Exceptions must be in the package `exceptions`
+3. The following exceptions must be implemented:
+   + Overflows
+   + Division by zero
+   + Missing brackets in expressions
+   + Invalid variables in expressions
+   + Undefinded operators in expressions
+   + Illegal constants in expressions
+   + Invalid arguments in operations (`Pow`, `Log`)
+4. Add checked mode for the expression calculations using implemented exceptions. The following operations must have checked mode:
+   + `CheckedAdd`, `CheckedSubtract`
+   + `CheckedMultiply`, `CheckedDivide`
+   + `CheckedPow`, `CheckedLog`
+   + `CheckedNegate`, `CheckedAbs`
+5. You __cannot__ use types `long` and `double` for checked mode
+5. You __cannot__ use methods of the classes `Math` and `StrictMath` for checked mode
 
 ## Examples
 Run `Example.java` with three arguments: value for $x$, value for $y$, value for $z$
 
-As an example, three expressions will be parsed, displayed and then evaluated:
+As an example, three expressions will be parsed, printed and then evaluated:
 1. Expression `-x*l08+(4*-(6))` with `int x` (first argument). Checked mode is on.
 2. BigDecimal expression `-(3.86)+(4.5*x)` with `BigDecimal x` (first argument). Checked mode is off.
 3. Triple expression `(-3*(x))+y*z+t04` with `int x`, `int y` and `int z` (three arguments). Checked mode is on.
