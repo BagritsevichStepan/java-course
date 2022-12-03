@@ -82,6 +82,19 @@ must return `false`.
       + Creating an abstract base class for binary and unary operations
 
 ### Second part
+1. Add the implementation of expression parser (interface `Parser` with method `parse`), so that the expression is built on the string like:
+```
+x * (x - 2)*x + 1
+```
+2. Expression parser must be in the package `parser`
+3. Expression string can contain:
+   + all binary and unary operations
+   + constants in `int` or `BigDecimal`
+   + variables $x$, $y$ or $z$
+   + round brackets to explicitly denote the priority of operations
+   + any number of whitespace characters in any place
+4. It is recommended to parse expressions using the [recursive descent method](https://en.wikipedia.org/wiki/Recursive_descent_parser). The algorithm must work in linear time
+
 
 ### Third part
 
