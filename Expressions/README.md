@@ -74,7 +74,7 @@ must return `false`.
    3. `Multiply`, `Divide`
    4. `Add`, `Subtract`
    5. `RightShift`, `UnsignedRightShift`, `LeftShift` 
-7. Interface `Expression` must contain the method `evaluate` to evaluate expression with one variable in type int
+7. Interface `Expression` must contain the method `evaluate` to evaluate expression in type int with one variable
 8. Interface `BigDecimalExpression` must contain the method `evaluate` to evaluate an expression in type BigDecimal with one variable
 9. Interface `TripleExpression` must contain the method `evaluate` to evaluate an expression in type int with three variables
 10. When performing the task, you should pay attention to:
