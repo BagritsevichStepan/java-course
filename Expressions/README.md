@@ -2,7 +2,7 @@
 The project parses mathematical expressions and stores them as classes, is able to compare and display mathematical expressions in different variants, can evaluate expressions with several variables. 
 
 ## Problem statement
-1. [First part Expressions calculation](#first-part)
+1. [First part. Expressions calculation](#first-part)
 2. [Second part. Expressions parser](#second-part)
 3. [Third part. Expressions exceptions and checked mode](#third-part)
 
