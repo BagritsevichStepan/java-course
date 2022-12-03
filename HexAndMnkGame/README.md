@@ -2,6 +2,9 @@
 The project implements two games, [HEX](https://en.wikipedia.org/wiki/Hex_(board_game)) and [MNK game](https://en.wikipedia.org/wiki/M,n,k-game), which is a complicated version of the Tic-Tac-Toe game. In addition to the ability to select the size of the board, you can also choose what type of player will play the game: human player, random player or sequential player.
 
 ## Problem statement
+1. [First part. MNK Game](#first-part)
+2. [Second part. HEX Game](#second-part)
+
 ### First part
 1. Implement the [MNK game](https://en.wikipedia.org/wiki/M,n,k-game)
 2. The game must be run by the class `Game` using the method `play`
