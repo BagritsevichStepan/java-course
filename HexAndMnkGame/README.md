@@ -30,6 +30,6 @@ The project implements two games, [HEX](https://en.wikipedia.org/wiki/Hex_(board
 Run `Example.java`
 
 As an example, three games will be run:
-1. HEX game with board $4 \times 4$, human and random player. Logging is enabled
-2. Tic-Tac-Toe game with sequential and human player. Logging is enabled
-1. MNK game with sequential player, random player and the board with $n = 4$, $m = 5$, $k = 4$. Logging is enabled
+1. HEX game with board $4 \times 4$, human and random player. Logging is on
+2. Tic-Tac-Toe game with sequential and human player. Logging is on
+1. MNK game with sequential player, random player and the board with $n = 4$, $m = 5$, $k = 4$. Logging is on
