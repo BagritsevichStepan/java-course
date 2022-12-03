@@ -21,7 +21,7 @@ The project implements two games, [HEX](https://en.wikipedia.org/wiki/Hex_(board
 1. Add the implementation of the [HEX game](https://en.wikipedia.org/wiki/Hex_(board_game))
 2. The code that implements both games must be common
 3. The class `HexBoard` is an implementation of the board for HEX game
-4. The hex board should process the move (check correctness, change state and determine the result) for $\mathcal{O}(1)$
+4. The hex board should process the move (check correctness, change state and determine the result) for $\mathcal{O}(\log_{2}(n * m))$
 
 ## Examples
 Run `Example.java`
