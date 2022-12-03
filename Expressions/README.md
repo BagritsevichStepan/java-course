@@ -75,12 +75,11 @@ must return `false`.
    4. `Add`, `Subtract`
    5. `RightShift`, `UnsignedRightShift`, `LeftShift` 
 7. Interface `Expression` must contain the method `evaluate` to evaluate expression with one variable in type int
-8. evaluate(BigDecimal)
-9. evaluate(int, int, int)
+8. Interface `BigDecimalExpression` must contain the method `evaluate` to evaluate an expression in type BigDecimal with one variable
+9. Interface `TripleExpression` must contain the method `evaluate` to evaluate an expression in type int with three variables
 10. When performing the task, you should pay attention to:
       + Creating a common interface for the classes
       + Creating an abstract base class for binary and unary operations
-
 
 ### Second part
 
