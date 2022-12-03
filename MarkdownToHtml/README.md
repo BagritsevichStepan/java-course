@@ -6,7 +6,7 @@ which can then be converted into html code.
 
 ## Problem statement
 1. [First part. Text markup](#first-part)
-2. [Second part. Markdown to Html](#second-part)
+2. [Second part. Markdown to Html. Markdown parser](#second-part)
 
 ### First part
 1. Develop a set of classes for *text markup*.
