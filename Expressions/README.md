@@ -4,7 +4,7 @@ The project parses mathematical expressions and stores them as classes, is able 
 ## Problem statement
 1. [First part. Expressions calculation](#first-part)
 2. [Second part. Expressions parser](#second-part)
-3. [Third part. Expressions exceptions and checked mode](#third-part)
+3. [Third part. Expressions exceptions. Checked mode for the expression calculations](#third-part)
 
 ### First part
 1. Implement following classes to evaluate expressions:
