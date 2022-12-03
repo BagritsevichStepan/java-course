@@ -2,6 +2,10 @@
 The project parses mathematical expressions and stores them as classes, is able to compare and display mathematical expressions in different variants, can evaluate expressions with several variables. 
 
 ## Problem statement
+1. [First part Expressions calculation](###first-part)
+2. [Second part. Expressions parser](###second-part)
+3. [Third part. Expressions exceptions and checked mode](###third-part)
+
 ### First part
 1. Implement following classes to evaluate expressions:
    + `Const` implements a constant value
@@ -97,5 +101,9 @@ x * (x - 2)*x + 1
 
 
 ### Third part
+1. Add something
+2. Add something
+3. Add something
+4. Add something
 
 ## Examples
