@@ -1,12 +1,13 @@
 # Markdown parser
-____
 The project implements text markup,
 elements of which can be converted to **markdown** or **html**.
 It can also **parse markdown** into text markup,
 which can then be converted into html code.
 
 ## Problem statement
-____
+1. [First part. Text markup](#first-part)
+2. [Second part. Markdown to Html](#second-part)
+
 ### First part
 1. Develop a set of classes for *text markup*.
 2. The `Paragraph` class can contain any number of other markup elements and text elements.
@@ -46,14 +47,8 @@ ____
    + `Delete` is a text with the `<del>` tag.
 
 ### Second part
-something
-
-## Usage
-____
-something
 
 ## Examples
-____
 ### First part
 something
 ### Second part
