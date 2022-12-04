@@ -80,7 +80,7 @@ The call `paragraph.toHtml(new StringBuilder())` should fill the passed `StringB
 3. The converter can store the original and converted data in memory
 4. Parser classes must be in the package `md2html`
 5. The other rules are given in the example below:
-   + Input file:
++ Input file:
 ```
 # First level header
 
@@ -152,7 +152,8 @@ with a backslash: *.</p>
 <p>Do you love <em>nested <strong>selections</strong></em>
 like <strong><s>I do</s></strong>?</p>
 ```
-+ Result in browser
++ Result in browser:
+![Result](https://github.com/BagritsevichStepan/java-course/blob/main/MarkdownToHtml/browser.png?raw=true)
 
 ## Examples
 ### First part
