@@ -4,6 +4,8 @@ elements of which can be converted to **markdown** or **html**.
 It can also **parse markdown** into text markup,
 which can then be converted into html code.
 
+[Examples](#examples)
+
 ## Problem statement
 1. [First part. Text markup](#first-part)
 2. [Second part. Markdown to Html. Markdown parser](#second-part)
@@ -157,6 +159,28 @@ like <strong><s>I do</s></strong>?</p>
 
 ## Examples
 ### First part
-something
+Run `MarkupExample.java`
+
+As an example, the following paragraph:
+```
+Paragraph paragraph = new Paragraph(List.of(
+        new Strong(List.of(
+            new Text("1"),
+            new Strikeout(List.of(
+                new Text("2"),
+                new Emphasis(List.of(
+                    new Text("3"),
+                    new Text("4")
+                )),
+                new Text("5")
+            )),
+            new Text("6")
+        ))
+    ));
+```
+will be printed in Markdown and then in Html.
+
 ### Second part
-something
+Run `MarkdownParserExample.java` with two arguments: input file name, output file name
++ The input file must contain Markdown markup encoded in UTF-8
++ The output file will contain the result in Html-code encoded in UTF-8
