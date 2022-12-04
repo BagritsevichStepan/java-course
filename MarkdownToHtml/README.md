@@ -45,8 +45,114 @@ which can then be converted into html code.
    + `Code` is defined with the `<code>` tag;
    + `Insert` has the tag `<ins>`;
    + `Delete` is a text with the `<del>` tag.
+8. The following code should compile successfully:
+```
+Paragraph paragraph = new Paragraph(List.of(
+        new Strong(List.of(
+            new Text("1"),
+            new Strikeout(List.of(
+                new Text("2"),
+                new Emphasis(List.of(
+                    new Text("3"),
+                    new Text("4")
+                )),
+                new Text("5")
+            )),
+            new Text("6")
+        ))
+    ));
+```
+The call `paragraph.toMarkdown(new StringBuilder())` should fill the passed `StringBuilder` with the following content:
+
+`__1~2*34*5~6__`
+
+The call `paragraph.toHtml(new StringBuilder())` should fill the passed `StringBuilder` with the following content:
+
+`<p><strong>1<s>2<em>34</em>5</s>6</strong></p>`
+
+9. Markup classes must be in the package `markup`
 
 ### Second part
+1. Implement a Markdown parser
+2. The parser must adhere to the following rules:
+   + Paragraphs are separated by blank lines
+   + Other markup elements are marked in the same way as in the `toMarkdown` method
+3. The converter can store the original and converted data in memory
+4. Parser classes must be in the package `md2html`
+5. The other rules are given in the example below:
+   + Input file:
+```
+# First level header
+
+## Second level header
+
+### Third ## level header
+
+#### Fourth level header
+## Still fourth ##
+
+This paragraph of text,
+## contains two lines.
+
+    # It might look like a headline.
+But no, it's a paragraph starting with `#.
+
+#And it's not a headline.
+
+###### Headlines can be multi-line.
+(and with skipping headings on previous levels).
+
+We all like to *select* text in _different_ ways.
+**Highlighting**, is used much less frequently,
+but __why not__?
+A little --drawing out-- has never hurt anyone.
+The code is represented by the `code` element.
+
+Notice how the special
+HTML characters such as `<`, `>` and `&`.
+
+Did you know that in Markdown, single * and _
+do not stand for selection?
+They can also be escaped
+with a backslash: \*.
+
+
+
+Unnecessary empty lines should be ignored.
+
+Do you love *nested __selections__*
+like __--I do--__?
+```
++ Output file (Html-code):
+```
+<h1>First level header</h1>
+<h2>Second level header</h2>
+<h3>Third ## level header</h3>
+<h4>Fourth level header
+## Still fourth ##</h4>
+<p>This paragraph of text,
+## contains two lines.</p>
+<p>    # It might look like a headline.
+But no, it's a paragraph starting with `#.</p>
+<p>#And it's not a headline.</p>
+<h6>Headlines can be multi-line.
+(and with skipping headings on previous levels).</h6>
+<p>We all like to <em>select</em> text in <em>different</em> ways.
+<strong>Highlighting</strong>, is used much less frequently,
+but <strong>why not</strong>?
+A little <s>drawing out</s> has never hurt anyone.
+The code is represented by the <code>code</code> element.</p>
+<p>Notice how the special
+HTML characters such as <code>&lt;</code>, <code>&gt;</code> and <code>&amp;</code>.</p>
+<p>Did you know that in Markdown, single * and _
+do not stand for selection?
+They can also be escaped
+with a backslash: *.</p>
+<p>Unnecessary empty lines should be ignored.</p>
+<p>Do you love <em>nested <strong>selections</strong></em>
+like <strong><s>I do</s></strong>?</p>
+```
++ Result in browser
 
 ## Examples
 ### First part
